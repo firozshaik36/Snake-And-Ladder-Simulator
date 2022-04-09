@@ -13,35 +13,36 @@ public class SnakeAndLadder {
         while (Winning_Position > startPosition) {
 
             int dieRoll = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-            System.out.println("Dice Roll number :" + dieRoll);
-
+            int needToWin = Winning_Position - startPosition;
             int checkOption = (int) (Math.floor(Math.random() * 10) % 3);
 
-            switch (checkOption) {
-                case 0:
-                    System.out.println("No Play");
-                    startPosition += 0;
-                    break;
+            if(needToWin >= dieRoll) {
 
-                case 1:
-                    System.out.println("Ladder:" + " + " + dieRoll);
-                    startPosition += dieRoll;
-                    break;
+                switch (checkOption) {
+                    case 0:
+                        System.out.println("No Play");
+                        startPosition += 0;
+                        break;
 
-                default:
-                    System.out.println("Snake : " + " - " + dieRoll);
-                    startPosition -= dieRoll;
+                    case 1:
+                        System.out.println("Ladder:" + " + " + dieRoll);
+                        startPosition += dieRoll;
+                        break;
 
-                    if (startPosition < 0) {
-                        System.out.println("Start Again");
-                        startPosition = 0;
-                    }
+                    default:
+                        System.out.println("Snake : " + " - " + dieRoll);
+                        startPosition -= dieRoll;
 
+                        if (startPosition < 0) {
+                            System.out.println("Start Again");
+                            startPosition = 0;
+                        }
+
+                }
             }
-
         }
 
-        System.out.println("Player " + Player_Name + "On Position :" + startPosition);
+        System.out.println("Player " + Player_Name + "Reached the Winning Position :" + startPosition);
 
 
     }
