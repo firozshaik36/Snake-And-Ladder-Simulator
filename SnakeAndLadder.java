@@ -32,15 +32,17 @@ public class SnakeAndLadder {
                     System.out.println("Snake : " + " - " + dieRoll);
                     startPosition -= dieRoll;
 
-                    if (startPosition < 0)
+                    if (startPosition < 0) {
                         System.out.println("Start Again");
-                 startPosition = 0;
+                        startPosition = 0;
+                    }
+
             }
 
         }
 
-            System.out.println("Player " + Player_Name + "On Position :" + startPosition);
+        System.out.println("Player " + Player_Name + "On Position :" + startPosition);
 
 
-        }
     }
+}
